@@ -18,14 +18,19 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
     const postData = await getPostData(params.id)
 
+    console.log(postData);
+
     return {
         props: {
-            postData
+            postData,
+            extraData: {
+                'name': 'Huu Nguyen2335'
+            }
         }
     }
 }
 
-export default function Post({ postData }) {
+export default function Post({ postData, extraData }) {
     return (
         <Layout>
         {/* Add this <Head> tag */}
@@ -34,6 +39,7 @@ export default function Post({ postData }) {
         </Head>
         <article>
             <h1 className={utilStyles.headingXl}>{postData.title}</h1>
+            <h2> {extraData.name} </h2>
             <div className={utilStyles.lightText}>
             <Date dateString={postData.date} />
             </div>

@@ -28,6 +28,8 @@ export default function Home({ allPostsData }) {
         </p>
       </section>
 
+    <div><Link href='/works'><a>Work</a></Link></div>
+
     {/* Add this <section> tag below the existing <section> tag */}
     <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
