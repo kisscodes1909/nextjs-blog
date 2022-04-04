@@ -5,11 +5,13 @@ import Head from 'next/head'
 import utilStyles from '../../styles/utils.module.css'
 
 
+
+
 export async function getStaticPaths() {
     // Return a list of possible value for id
     const paths = getAllPostIds();
     return {
-      paths,
+      paths: [],
       fallback: false
     }
 }
